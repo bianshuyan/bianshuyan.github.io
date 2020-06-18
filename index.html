@@ -1,24 +1,4 @@
-#lang racket
-(require "xml-formatter.rkt")
-(define index
-  `(html
-    (head
-     (meta ((charset "utf-8")))
-     (title "OUTERHEAVEN"))
-    (body
-     (h1 "OUTERHEAVEN")
-     (h1 "研究非科学问题的科学家就和下一个家伙一样蠢.")
-     (h2 "SOME USELESS CODE IN RACKET")
-     (p (a ((href "env.rkt")) "the environment data structure"))
-     (p (a ((href "fenv.rkt")) "the functional version of the environment data structure"))
-     (p (a ((href "interps.rkt")) "some interpreters"))
-     (p (a ((href "match.rkt")) "a simple pattern matching macro compatible with R5RS"))
-     (p (a ((href "meta-interp.rkt")) "a meta-circular interpreter"))
-     (p (a ((href "minikanren.rkt")) "the minimal implementation of miniKanren"))
-     (p (a ((href "xml-formatter.rkt")) "a xml formatter"))
-     (h2 "ESSAYS")
-     (h3 "选择的权利")
-     (p (pre "
+<html><head><meta charset="utf-8"/><title>OUTERHEAVEN</title></head><body><h1>OUTERHEAVEN</h1><h1>研究非科学问题的科学家就和下一个家伙一样蠢.</h1><h2>SOME USELESS CODE IN RACKET</h2><p><a href="env.rkt">the environment data structure</a></p><p><a href="fenv.rkt">the functional version of the environment data structure</a></p><p><a href="interps.rkt">some interpreters</a></p><p><a href="match.rkt">a simple pattern matching macro compatible with R5RS</a></p><p><a href="meta-interp.rkt">a meta-circular interpreter</a></p><p><a href="minikanren.rkt">the minimal implementation of miniKanren</a></p><p><a href="xml-formatter.rkt">a xml formatter</a></p><h2>ESSAYS</h2><h3>选择的权利</h3><p><pre>
 我记不起第多少次想要转发一下王垠的微博(这也是我唯一使用微博的目的,看看王垠的谬论)
 ,顺便在底下评一个王垠很可能会看一看的评论,或很有可能不看,每次我都会卡在登录页面上,
 然后作罢,有时甚至写了半个小时以上,但我从来没有成功转发过他的微博.我对于
@@ -29,15 +9,9 @@
 信,甚至是现在常用的bilibili那时我也很少使用,那时我使用手机(偷偷地)的唯一用途就
 是阅读txt,epub,pdf文件,然后伴随着周期性的使用模拟器的游戏史研究计划.这个社会完全
 没有给人选择的权利,我讨厌手机,QQ,微信这些东西,但我被莫名奇妙地绑架着使用它们.
-"))
-     (h3 "对话树")
-     (p (pre "
+</pre></p><h3>对话树</h3><p><pre>
 对话树一般来说并不形成树，常常形成图，因而对话脚本的写作方式类似于汇编语言而多用label与goto。
-（未完待续）")
-        (img ((src "dialogue-tree.png")))
-        )
-     (h3 "谈谈王垠")
-     (p (pre "
+（未完待续）</pre><img src="dialogue-tree.png"/></p><h3>谈谈王垠</h3><p><pre>
 我曾经和王垠有过浅薄的交流，感觉非常差，当时还有几个人与王垠同时谈论着一些话题。之所以我的感觉很差，
 后来我发现，原来是因为王垠总是预先地准备话题，预先地打好草稿，一旦你偏离他的剧本，他就要想方设法纠正
 过来，这种习惯估计王垠自己并没有发觉，他自以为自己素质很高，很幽默，很懂生活，很懂数学，更懂计算机科学，
@@ -65,10 +39,7 @@
 可以继续自己的研究，不要老是发牢骚，发表一般论，像个公知/网红一样，像你说过于沉迷社交媒体，这肯定是你自己
 的写照，不然你也不可能会发这种微博，可能你无法想象一个不用微信|QQ|微博（微博除了看你之外别无他用），一年
 用手机打别人电话平均下来一年一次都没有，从来不发短信给别人的人是什么样的。至于我为什么要如此无聊的说一说自
-己的看法，可能是因为我和你很像罢了，因而作此文为大家笑。"))
-     (h3 "谈王垠续")
-     (p (pre
-         "
+己的看法，可能是因为我和你很像罢了，因而作此文为大家笑。</pre></p><h3>谈王垠续</h3><p><pre>
     很久以前,我就已经知道忘记历史者的可悲之处,实际上,这往往也不是这些人的错.
 一种教育,特别是急于证明其比旧教育优越的教育,往往带来历史上的清洗,王垠就是这种
 教育的受害者.最近,他竟然做出了今日中国人鲜有人知鲁迅的论断,我实在无法理解,而
@@ -85,9 +56,7 @@
 育可以让王垠产生这种错觉,但从最近王垠各种民粹主义的发言来看,我觉得这应该是他自己
 的问题,他似乎从来都不在乎历史,以为历史就是可以像95%都是好人一样可以随口胡诌,以至
 任意地颠倒是非,以支持自己的观点.
-"))
-     (h3 "迭代与递归")
-     (p (pre "
+</pre></p><h3>迭代与递归</h3><p><pre>
     不知道为什么，人们总觉得递归的效率一定比迭代的效率来得低，
 这种误解虽然可以理解，但却是全然错误的想法。让我们先来检视一个
 熟悉的求最大公因数的过程，它的定义如下：
@@ -144,7 +113,4 @@ gcd实际上会变成类似于如下形式的过程：
       (k a)
       (gcd b (remainder a b) (lambda (v) (k v)))))
 我们可以清楚地看到，在这种gcd过程的求值过程中，延续是会增长的，
-这或许就是递归比迭代效率低的误解的根源吧。")))))
-(with-output-to-file "outerheaven.html"
-  (lambda () (convert index))
-  #:exists 'replace)
+这或许就是递归比迭代效率低的误解的根源吧。</pre></p></body></html>
