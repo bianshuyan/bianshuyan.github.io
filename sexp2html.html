@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>sexp2html</title></head><body><h1>naive的s-exp到html的转换</h1><p><pre>
+(define (convert-attrs attrs)
+  (for-each
+   (lambda (attr)
+     (printf " ~s=~s" (car attr) (cadr attr)))
+   attrs))
+(define (convert exp)
+  (match exp
+    ((,tag) (printf "<~s/>" tag))
+    ((,tag ,attrs) (guard (pair? attrs) (pair? (car attrs)))
+                   (printf "<~s" tag)
+                   (convert-attrs attrs)
+                   (printf "/>"))
+    ((,tag ,attrs . ,exps) (guard (pair? attrs) (pair? (car attrs)))
+                           (printf "<~s" tag)
+                           (convert-attrs attrs)
+                           (printf ">")
+                           (for-each convert exps)
+                           (printf "</~s>" tag))
+    ((,tag . ,exps) (printf "<~s>" tag)
+                    (for-each convert exps)
+                    (printf "</~s>" tag))
+    (else (printf "~a" exp))))
+</pre></p><p><a href="index.html">回到主页</a></p></body></html>

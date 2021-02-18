@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>product</title></head><body><h1>product</h1><p><pre>
+;(append-map proc lst)等价于(apply append (map proc lst))
+;其他语言常以flatmap称append-map
+(define (product . lst*)
+  (let loop ((rest lst*) (result '(())))
+    (if (null? rest)
+        result
+        (loop (cdr rest)
+              (append-map (lambda (d)
+                            (map (lambda (a) (cons a d))
+                                 (car rest)))
+                          result)))))
+</pre></p><p><a href="index.html">回到主页</a></p></body></html>
