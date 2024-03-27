@@ -6,6 +6,8 @@
    #:title "混沌空间"
    #:css "styles.css"
    (H1 "混沌空间")
+   (P "这里放置一些不愿意给别人看的材料, 绝大部分是随心所欲的翻译.")
+   (P "修改日期 (北京时间): " (current-date-string #:format 'chinese))
    (columnize
     (H2 (A "操作语义的结构方法" #:attr* '((href "sos.html"))))
     (H2 (A "指称语义学" #:attr* '((href "ds.html"))))
@@ -31,6 +33,7 @@
     (H2 (A "数学家学法语" #:attr* '((href "french.html"))))
     (H2 (A "理解Maxima" #:attr* '((href "maxima.html"))))
     (H2 (A "把东西粘在一起" #:attr* '((href "scheme_cg.html"))))
+    (H2 (A "分析一 (Amann & Escher)" #:attr* '((href "analysis1_amann.html"))))
     
     )
    ))

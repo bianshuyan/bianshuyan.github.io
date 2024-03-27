@@ -27,6 +27,7 @@
          "french.rkt"
          "maxima.rkt"
          "scheme_cg.rkt"
+         "analysis1_amann.rkt"
          
          )
 (define (emit-web)
@@ -57,6 +58,7 @@
   (emitXml french.html "../french.html")
   (emitXml maxima.html "../maxima.html")
   (emitXml scheme_cg.html "../scheme_cg.html")
+  (emitXml analysis1_amann.html "../analysis1_amann.html")
   
   )
 (emit-web)
